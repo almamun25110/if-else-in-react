@@ -4,6 +4,7 @@ import "./App.css";
 function App() {
   let [pShow, setpShow] = useState(false);
   let [status, setStatus] = useState(false);
+  let [pstatus, setPstatus] = useState(false);
   let template = "";
 
   if (pShow) {
@@ -36,9 +37,16 @@ function App() {
   return (
     <div className="App">
       {template}
-      <br/>
-      <button onClick={()=>setStatus(!status)} className="py-2 px-4 shadow-lg cursor-pointer hover:bg-blue-200 rounded-[5px]">{status ? "Hide" : "Show"}</button>
-      {status ? <p>This is a Paragraph</p> : "" }
+      <br /> <br/> <br/>
+      <button
+        onClick={() => setStatus(!status)}
+        className="py-2 px-4 shadow-lg cursor-pointer hover:bg-blue-200 rounded-[5px]"
+      >
+        {status ? "Hide" : "Show"}
+      </button>
+      {status ? <p>This is a Paragraph</p> : ""}
+      <br/> <br/> <br/>
+      <input className="border-[1px] border-black border-solid py-1 px-2" type={pstatus ? "text" : "password"}/> <button onClick={()=>setPstatus(!pstatus)}>{pstatus ? "Hide" : "Show"}</button>
     </div>
   );
 }
